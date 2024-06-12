@@ -1,7 +1,12 @@
+:root {
+    --font-size-base: 16px;
+    --color-warm-orange: #cd7100;
+}
+
 body {
     background-color: #f2f2f2;
     font-family: Verdana, sans-serif;
-    font-size: 16px;
+    font-size: var(--font-size-base);
     font-weight: 400;
     line-height: 1.5;
     color: #333;
@@ -25,12 +30,21 @@ h1 {
 h1, h2, h3, h4, h5, h6 {
     font-family: "Segoe UI", Arial, sans-serif;
     font-weight: 400;
-    margin: 10px 0;
+    margin: 0;
 }
+
+p {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
 
 input[type="text"],
 button {
-    font-size: 16px;
+    font-size: var(--font-size-base);
     padding: 8px;
     border-radius: 4px;
     outline: 0;
@@ -43,7 +57,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
     background-color: #fff4e8;
-    border-color: #cd7100 !important;
+    border-color: var(--color-warm-orange) !important;
     box-shadow: 0 0 5px rgba(204, 204, 204, 0.5);
 }
 
@@ -70,7 +84,7 @@ input[type="checkbox"]:checked::before {
     content: '✔';
     display: block;
     color: #ffffff;
-    font-size: 12px;
+    font-size: 18px;
     text-align: center;
     line-height: 21px;
 }
@@ -80,12 +94,11 @@ input[type="checkbox"]:focus {
     box-shadow: 0 0 5px rgba(204, 204, 204, 0.5);
 }
 
-
 button {
     background-color: #ff8c00;
     color: #f2f2f2;
     cursor: pointer;
-    border: 1px solid #cd7100;
+    border: 1px solid var(--color-warm-orange);
 }
 
 button:hover {
@@ -115,4 +128,12 @@ li {
 
 .completed {
     text-decoration: line-through;
+}
+
+.description {
+    font-size: 14px;
+    font-weight: 300;
+    color: #666;
+    padding: 0;
+    margin-bottom: 20px;
 }
