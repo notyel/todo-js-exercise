@@ -1,12 +1,12 @@
 body {
     background-color: #f2f2f2;
-    font-family: 'Roboto', sans-serif;
+    font-family: Verdana, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     color: #333;
     margin: 1rem;
-    padding: 0
+    padding: 0;
 }
 
 .container {
@@ -19,11 +19,17 @@ body {
 }
 
 h1 {
-    text-align: center;
-    text-transform: uppercase;
+    font-size: 42px;
 }
 
-input, button {
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+input[type="text"],
+button {
     font-size: 16px;
     padding: 8px;
     border-radius: 4px;
@@ -31,15 +37,49 @@ input, button {
     border: none;
 }
 
-input {
+input[type="text"] {
     border: 1px solid #e6e6e6;
 }
 
-input:focus {
+input[type="text"]:focus {
     background-color: #fff4e8;
-    border-color: #cccccc !important;
+    border-color: #cd7100 !important;
     box-shadow: 0 0 5px rgba(204, 204, 204, 0.5);
 }
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 21px;
+    height: 21px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    background-color: #fff;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #ff8c00;
+    border-color: #ff8c00;
+}
+
+input[type="checkbox"]:checked::before {
+    content: '✔';
+    display: block;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 21px;
+}
+
+input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(204, 204, 204, 0.5);
+}
+
 
 button {
     background-color: #ff8c00;
@@ -48,9 +88,14 @@ button {
     border: 1px solid #cd7100;
 }
 
-
 button:hover {
     background-color: #ffa333;
+}
+
+.delete-button {
+    padding: 4px;
+    font-size: 12px;
+    margin-left: auto;
 }
 
 ul {
@@ -66,4 +111,8 @@ li {
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 4px;
+}
+
+.completed {
+    text-decoration: line-through;
 }
