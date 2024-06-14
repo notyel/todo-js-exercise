@@ -1,6 +1,7 @@
 const tasksList = document.querySelector("#tasks-list");
 const newTaskInput = document.querySelector("#new-task-input");
 const addTaskButton = document.querySelector("#add-task-button");
+const alertApp = document.querySelector("#alert-app");
 
 const tasks = [];
 
@@ -8,6 +9,7 @@ const app = {
   tasks,
   tasksList,
   newTaskInput,
+  alertApp,
 };
 
 window.onload = function () {
@@ -83,9 +85,22 @@ function createTaskElement(task) {
   return taskElement;
 }
 
+function showAlert(app, message, type = "info") {
+  const alertContainer = document.createElement("div");
+  alertContainer.classList.add("alert", `alert-${type}`);
+  alertContainer.textContent = message;
+
+  const alertApp = app.alertApp;
+  alertApp.appendChild(alertContainer);
+
+  setTimeout(() => {
+    alertContainer.remove();
+  }, 3000);
+}
+
 addTaskButton.addEventListener("click", () => {
   if (app.newTaskInput.value === "") {
-    showAlert("Por favor, ingresa una tarea.", "warning");
+    showAlert(app, "Por favor, ingresa una tarea.", "warning");
     return;
   }
 
@@ -95,23 +110,10 @@ addTaskButton.addEventListener("click", () => {
 newTaskInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     if (app.newTaskInput.value === "") {
-      showAlert("Por favor, ingresa una tarea.", "warning");
+      showAlert(app, "Por favor, ingresa una tarea.", "warning");
       return;
     }
 
     addTask(app);
   }
 });
-
-function showAlert(message, type = "info") {
-  const alertContainer = document.createElement("div");
-  alertContainer.classList.add("alert", `alert-${type}`);
-  alertContainer.textContent = message;
-
-  const alertApp = document.getElementById("alert-app");
-  alertApp.appendChild(alertContainer);
-
-  setTimeout(() => {
-    alertContainer.remove();
-  }, 3000);
-}
