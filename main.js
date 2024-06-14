@@ -84,11 +84,34 @@ function createTaskElement(task) {
 }
 
 addTaskButton.addEventListener("click", () => {
+  if (app.newTaskInput.value === "") {
+    showAlert("Por favor, ingresa una tarea.", "warning");
+    return;
+  }
+
   addTask(app);
 });
 
 newTaskInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
+    if (app.newTaskInput.value === "") {
+      showAlert("Por favor, ingresa una tarea.", "warning");
+      return;
+    }
+
     addTask(app);
   }
 });
+
+function showAlert(message, type = "info") {
+  const alertContainer = document.createElement("div");
+  alertContainer.classList.add("alert", `alert-${type}`);
+  alertContainer.textContent = message;
+
+  const alertApp = document.getElementById("alert-app");
+  alertApp.appendChild(alertContainer);
+
+  setTimeout(() => {
+    alertContainer.remove();
+  }, 3000);
+}
