@@ -1,6 +1,7 @@
 :root {
     --font-size-base: 16px;
     --color-warm-orange: #cd7100;
+    --color-white: #ffffff;
     --border-radius: 4px;
     --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -20,7 +21,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: var(--color-white);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -69,7 +70,7 @@ input[type="checkbox"] {
     height: 21px;
     border: 1px solid #e6e6e6;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--color-white);
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -85,7 +86,7 @@ input[type="checkbox"]:checked {
 input[type="checkbox"]:checked::before {
     content: '✔';
     display: block;
-    color: #ffffff;
+    color: var(--color-white);
     font-size: 18px;
     text-align: center;
     line-height: 21px;
@@ -145,7 +146,7 @@ li {
     margin: 20px 0;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    color: #fff;
+    color: var(--color-white);
     border: 1px solid;
 }
 
