@@ -27,8 +27,9 @@ function saveTasksToLocalStorage(tasks) {
 }
 
 function createTask(title, isCompleted = false) {
+  let uuid = self.crypto.randomUUID();
   return {
-    id: Date.now(),
+    id: uuid,
     title,
     isCompleted,
   };
