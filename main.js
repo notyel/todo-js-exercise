@@ -67,7 +67,6 @@ function createTaskElement(task) {
   taskText.classList.toggle("completed", task.isCompleted);
 
   const taskDeleteButton = document.createElement("button");
-  taskDeleteButton.textContent = "Eliminar";
   taskDeleteButton.className = "delete-button";
   taskDeleteButton.addEventListener("click", () => {
     taskElement.remove();
@@ -78,6 +77,11 @@ function createTaskElement(task) {
     }
     saveTasksToLocalStorage(app.tasks);
   });
+
+  // Replace text with icon
+  taskDeleteButton.innerHTML = '<i class="material-icons">delete</i>';
+  taskDeleteButton.style.fontSize = "16px";
+  taskDeleteButton.style.padding = "4px 8px";
 
   taskElement.appendChild(taskCheckbox);
   taskElement.appendChild(taskText);

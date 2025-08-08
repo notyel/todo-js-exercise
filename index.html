@@ -6,21 +6,30 @@
     <meta name="theme-color" content="#007bff" />
     <title>Aplicación de gestión de tareas</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
-      <h1>Lista de Tareas</h1>
+      <h1 class="title">Lista de Tareas</h1>
       <p class="description">
         Administra tus tareas diarias de manera eficiente y organizada.
       </p>
 
-      <input
-        id="new-task-input"
-        type="text"
-        placeholder="Escribe una nueva tarea"
-      />
+      <div class="task-input-container">
+        <input
+          id="new-task-input"
+          type="text"
+          placeholder="Escribe una nueva tarea"
+        />
 
-      <button id="add-task-button">Añadir Tarea</button>
+        <button id="add-task-button">
+          <i class="material-icons">add</i>
+          Añadir Tarea
+        </button>
+      </div>
 
       <div id="alert-app"></div>
       <ul id="tasks-list"></ul>

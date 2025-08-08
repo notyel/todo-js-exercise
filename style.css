@@ -29,10 +29,6 @@ body {
     font-weight: 300;
 }
 
-h1 {
-    font-size: 42px;
-}
-
 h1,
 h2,
 h3,
@@ -42,14 +38,15 @@ h6 {
     font-family: var(--font-family-secondary);
     font-weight: 400;
     margin: 0;
+    padding: 0;
 }
 
 p {
     font-size: 14px;
     font-weight: 300;
+    margin: 0;
     padding: 0;
-    margin-bottom: 20px;
-    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 
@@ -70,6 +67,10 @@ input[type="text"] {
     transition: all 0.3s ease;
     font-weight: 500;
     /* Alineación visual con el botón */
+    font-size: 18px;
+    /* Aumento de tamaño de fuente */
+    width: 65%;
+    /* Ancho ajustado para dejar espacio al botón */
 }
 
 input[type="text"]:focus {
@@ -120,8 +121,10 @@ button {
     padding: 12px 20px;
     border-radius: 6px;
     font-weight: 600;
-    color: var(--color-white); /* Texto blanco para mejor contraste */
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Sombra para destacar el texto */
+    color: var(--color-white);
+    /* Texto blanco para mejor contraste */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    /* Sombra para destacar el texto */
     transition: all 0.3s ease;
 }
 
@@ -136,10 +139,47 @@ button:active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+button#add-task-button {
+    /* Diseño con icono */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Espacio entre icono y texto */
+    padding: 12px 24px;
+    /* Aumento de padding para espacio del icono */
+    font-size: 1rem;
+    /* Ajuste de tamaño de texto */
+}
+
+button#add-task-button i.material-icons {
+    /* Estilo del icono */
+    font-size: 1.2rem;
+    /* Tamaño del icono */
+    color: var(--color-white);
+    /* Color del icono */
+}
+
 .delete-button {
-    padding: 4px;
-    font-size: 12px;
+    background-color: #d32f2f;
+    color: var(--color-white);
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
     margin-left: auto;
+}
+
+.delete-button:hover {
+    background-color: #b22222;
+    /* Rojo más oscuro al pasar el mouse */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.delete-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 ul {
@@ -162,12 +202,18 @@ li {
     text-decoration: line-through;
 }
 
+.title {
+    font-size: 42px;
+    margin: 0;
+    line-height: 1.1;
+}
+
 .description {
     font-size: 1rem;
     font-weight: 300;
     color: #555;
-    padding: 0;
-    margin-bottom: 20px;
+    margin: 4px 0 20px;
+    line-height: 1.4;
 }
 
 .alert {
@@ -192,4 +238,10 @@ li {
 .alert-warning {
     background-color: #f39c12;
     border-color: #e67e22;
+}
+
+.task-input-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
